@@ -14,24 +14,33 @@ public class FlightController {
 
     @Autowired
     private FlightService flightService;
+    
+    //add flight
 
     @PostMapping("/addflight")
     public void addflight(@RequestBody FlightDTO flightDTO){
         flightService.addFlight(flightDTO);
     }
+    
+    // get All flights
     @GetMapping("/allFlight")
     public List<FlightDTO> getAll(){
         return flightService.getAllFlights();
     }
+    // delete flight
 
     @DeleteMapping("/delete/{id}")
     public void deleteFlight(@PathVariable Integer id){
         flightService.deleteFlight(id);
     }
+    
+    // update flight
     @PutMapping("updateFlight")
     public void updateFlight(@RequestBody FlightDTO flightDTO ){
         flightService.updateFlight(flightDTO);
     }
+    
+    // search flight by two names
 
     @GetMapping("/findName/{fromcity}/{tocity}")
     public Flight searchCustomer(@PathVariable String fromcity,String Tocity){
