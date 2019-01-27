@@ -24,6 +24,7 @@ public class passengerController {
 
 @GetMapping("/allPasenger")
     public List<passengerDTO>getAll(){
+    	System.out.println("allPasenger");
     return passengerService.getAllPasenger();
 }
 
