@@ -19,12 +19,15 @@ public class passengerController {
 @PostMapping("/addPasenger")
     public void addPasenger(@RequestBody passengerDTO pasengerdto){
     passengerService.savePasenger(pasengerdto);
+    
     System.out.println("controller"+pasengerdto);
 }
 
 @GetMapping("/allPasenger")
     public List<passengerDTO>getAll(){
+    	System.out.println("AllPasenger");
     return passengerService.getAllPasenger();
+    
 }
 
 
